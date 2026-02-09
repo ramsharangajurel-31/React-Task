@@ -4,6 +4,7 @@ import Filters from "./components/Filters";
 import JobCard from "./components/JobCard";
 import Pagination from "./components/Pagination";
 import jobsData from "../src/components/data/jobs";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   const [search, setSearch] = useState("");
@@ -28,6 +29,7 @@ export default function App() {
   return (
     <div className="app">
       <Header />
+      <Navbar />
 
       <div className="layout">
         <Filters setType={setType} setLocation={setLocation} />

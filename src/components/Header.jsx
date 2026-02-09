@@ -1,17 +1,24 @@
-import { FaUserCircle, FaBriefcase } from "react-icons/fa";
+import { FaBriefcase, FaUserCircle } from "react-icons/fa";
+import { BsBookmark, BsClipboardCheck } from "react-icons/bs";
 
 export default function Header() {
   return (
-    <header className="header">
-      <div className="logo">
-        <FaBriefcase />
-        <div>
-          <strong>JobBoard Pro</strong>
-          <small>Find your dream career</small>
+    <header className="top-header">
+      <div className="header-left">
+        <div className="logo-box">
+          <FaBriefcase />
+        </div>
+
+        <div className="logo-text">
+          <h3>JobBoard Pro</h3>
+          <span>Find your dream career</span>
         </div>
       </div>
 
-      <FaUserCircle size={28} className="profile-icon" />
+      <div className="header-right">
+        <FaUserCircle />
+        <span>Profile</span>
+      </div>
     </header>
   );
 }

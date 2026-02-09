@@ -1,22 +1,45 @@
-import { FaMapMarkerAlt, FaClock, FaUsers } from "react-icons/fa";
+
+import {
+  FiMapPin,
+  FiBriefcase,
+  FiClock,
+  FiBookmark,
+} from "react-icons/fi";
+import { HiOutlineCurrencyDollar } from "react-icons/hi";
+import { FaStar } from "react-icons/fa";
 
 export default function JobCard({ job }) {
   return (
     <div className="job-card">
-      <div className="job-left">
-        <img src={job.logo} alt="" />
+      <div className="left">
+        <img src={job.logo} alt={job.company} className="avatar" />
 
-        <div>
-          <h4>{job.title}</h4>
-          <p>{job.company}</p>
+        <div className="info">
+          <h3>{job.title}</h3>
 
-          <div className="meta">
-            <span><FaMapMarkerAlt /> {job.location}</span>
-            <span><FaClock /> {job.type}</span>
-            <span>{job.salary}</span>
+          <div className="company">
+            {job.company}
+            <span className="rating">
+              <FaStar /> 4.9
+            </span>
           </div>
 
-          <div className="tags">
+          <div className="meta">
+            <span>
+              <FiMapPin /> {job.location}
+            </span>
+            <span>
+              <FiBriefcase /> {job.type}
+            </span>
+            <span className="salary">
+              <HiOutlineCurrencyDollar /> {job.salary}
+            </span>
+            <span>
+              <FiClock /> 1w ago
+            </span>
+          </div>
+
+          <div className="skills">
             {job.skills.map((skill, i) => (
               <span key={i}>{skill}</span>
             ))}
@@ -24,8 +47,11 @@ export default function JobCard({ job }) {
         </div>
       </div>
 
-      <div className="job-right">
-        <FaUsers /> {job.applicants}
+      <div className="right">
+        <button className="bookmark">
+          <FiBookmark />
+        </button>
+        <span className="applicants">{job.applicants} applicants</span>
       </div>
     </div>
   );
