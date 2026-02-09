@@ -1,19 +1,28 @@
 import { FaBriefcase } from "react-icons/fa";
 import { BsBookmark, BsClipboardCheck } from "react-icons/bs";
 
-export default function Navbar() {
+export default function Navbar({ activeTab, setActiveTab, savedCount, appliedCount }) {
   return (
     <nav className="nav-tabs">
-      <button className="active">
+      <button
+        className={activeTab === "all" ? "active" : ""}
+        onClick={() => setActiveTab("all")}
+      >
         <FaBriefcase /> All Jobs
       </button>
 
-      <button>
-        <BsBookmark /> Saved (0)
+      <button
+        className={activeTab === "saved" ? "active" : ""}
+        onClick={() => setActiveTab("saved")}
+      >
+        <BsBookmark /> Saved ({savedCount})
       </button>
 
-      <button>
-        <BsClipboardCheck /> Applied (0)
+      <button
+        className={activeTab === "applied" ? "active" : ""}
+        onClick={() => setActiveTab("applied")}
+      >
+        <BsClipboardCheck /> Applied ({appliedCount})
       </button>
     </nav>
   );
