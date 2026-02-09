@@ -4,7 +4,7 @@ import { FiMapPin, FiBriefcase, FiClock } from "react-icons/fi";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { FaTimes, FaCheckCircle } from "react-icons/fa";
 
-export default function JobDetailsModal({ job, onClose, onApply }) {
+export default function JobDetailsModal({ job, onClose, onApply, onCancel, isApplied }) {
   return (
     <AnimatePresence>
       {job && (
@@ -92,7 +92,11 @@ export default function JobDetailsModal({ job, onClose, onApply }) {
 
             {/* Actions */}
             <div className="modal-actions">
-              <button className="apply" onClick={() => onApply(job)}>Apply Now</button>
+              {isApplied ? (
+                <button className="cancel" onClick={() => onCancel(job)}>Cancel Application</button>
+              ) : (
+                <button className="apply" onClick={() => onApply(job)}>Apply Now</button>
+              )}
               <button className="secondary" onClick={onClose}>Close</button>
             </div>
           </motion.div>

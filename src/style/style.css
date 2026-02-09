@@ -512,3 +512,19 @@ ul li svg {
   font-size: 15px;
   cursor: pointer;
 }
+
+.cancel {
+  flex: 1;
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cancel:hover {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+}

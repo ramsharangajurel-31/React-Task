@@ -16,6 +16,7 @@ export default function App() {
   const [appliedJobs, setAppliedJobs] = useState([]);
   const [activeTab, setActiveTab] = useState("all");
   const [selectedJob, setSelectedJob] = useState(null);
+  const [isApplied, setIsApplied] = useState(false);
 
   const jobsPerPage = 5;
 
@@ -31,6 +32,7 @@ export default function App() {
   // Open Modal
   const openModal = (job) => {
     setSelectedJob(job);
+    setIsApplied(appliedJobs.some((j) => j.id === job.id));
   };
 
   // Close Modal
@@ -44,6 +46,12 @@ export default function App() {
       setAppliedJobs((prev) => [...prev, job]);
     }
     setSelectedJob(null); // Close modal after applying
+  };
+
+  // Cancel Application
+  const cancelApplication = (job) => {
+    setAppliedJobs((prev) => prev.filter((j) => j.id !== job.id));
+    setSelectedJob(null); // Close modal after canceling
   };
 
   // Decide which jobs to show
@@ -113,7 +121,7 @@ export default function App() {
         </main>
       </div>
 
-      <JobDetailsModal job={selectedJob} onClose={closeModal} onApply={applyForJob} />
+      <JobDetailsModal job={selectedJob} onClose={closeModal} onApply={applyForJob} onCancel={cancelApplication} isApplied={isApplied} />
     </div>
   );
 }
