@@ -1,11 +1,8 @@
-# TODO: Update Job Listing UI to Match Figma Design
+# TODO: Create Professional IT Services Webpage
 
 ## Tasks
-- [ ] Update `src/components/data/jobs.js`: Add salary, experience level, company rating to job objects
-- [ ] Update `src/components/JobList.jsx`: Add filter dropdowns (job type, location, experience), salary slider, sort options, save/bookmark state, application tracking UI, enhance search
-- [ ] Update `src/components/JobCard.jsx`: Display company rating, add save/bookmark button
-- [ ] Update `src/components/JobDetails.jsx`: Show company rating, update apply button to track applications
-- [ ] Update `src/components/Modal.jsx`: Add backdrop blur effect
-- [ ] Update `src/components/Button.jsx`: Support gradient classes
-- [ ] Ensure responsive design and smooth transitions
-- [ ] Test responsiveness, verify filters/sort work, add any missing data
+- [x] Create `src/components/ITServices.jsx`: Build the main IT Services component with introduction, categorized services, benefits, CTAs, testimonials, and tech stack icons
+- [x] Update `src/App.jsx`: Modify to render ITServices component instead of job portal
+- [ ] Update `src/components/Header.jsx`: Change navigation to fit IT Services page (e.g., Services, About, Contact)
+- [ ] Update `src/style/style.css`: Add styles for IT Services page, ensure responsive design
+- [ ] Test the webpage for responsiveness and functionality
